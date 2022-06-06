@@ -3,43 +3,34 @@ const fakeBodySteps = 1000
 
 const trackedKeys = ["size", "color", "fireStrength", "rotation", "position", "paritype", "displayName", "label", "labelWidth"]
 
+const avatars = ["bananya_birbo", "shiba", "marshmallow_hat_guy", "takodachi_rigged_hololive"]
+const avatarsPara = {
+	bananya_birbo: {
+		scale: "1 1 1",
+		rotation: "0 180 0",
+		position: "0 0 0"
+	},
+	shiba: {
+		scale: "1 1 1",
+		rotation: "0 180 0",
+		position: "0 0 0"
+	},
+	marshmallow_hat_guy: {
+		scale: "100 100 100",
+		rotation: "0 180 0",
+		position: "0 0 0"
+	},
+	takodachi_rigged_hololive: {
+		scale: ".01 .01 .01",
+		rotation: "0 180 0",
+		position: "0 0 0"
+	}
+}
+
 // Decorate the head of our guests
 Vue.component("obj-head", {
 	template: `<a-entity>
-
-		<a-sphere 
-			shadow
-			:radius="headSize"
-			:color="obj.color.toHex()" 
-				
-			>
-			<obj-axes scale=".1 .1 .1" v-if="false" />
-		</a-sphere>
-
-		<a-cone v-for="(spike,index) in spikes"
-			:key="index"
-			:height="spike.size"
-			:radius-bottom="headSize*.2"
-			:position="spike.position.toAFrame(0, .2, 0)"
-			:rotation="spike.rotation.toAFrame()"
-			:color="obj.color.toHex(.5*Math.sin(index))" 
-				
-			>
-		
-		</a-cone>
-
-		<!-- NOSE -->
-		<a-cone
-		
-			:height="headSize*.6"
-			:radius-bottom="headSize*.4"
-			position="0 0 -.18"
-			
-			:color="obj.color.toHex(.3)" 
-			
-		>
-	
-		</a-cone>
+	<a-gltf-model :src="avatar" :scale="scale" :rotation="rotation" :position="position" animation-mixer></a-gltf-model>
 	</a-entity>
 	`,
 	computed: {
@@ -49,6 +40,23 @@ Vue.component("obj-head", {
 		headSize() {
 			return this.obj.size instanceof Vector ? this.obj.size.x : this.obj.size
 		},
+		avatar() {
+			if (params.avatar && avatars.includes(params.avatar)) {
+				this.obj.avatar = params.avatar
+			} else {
+				this.obj.avatar = avatars[Math.floor(Math.random() * avatars.length)]
+			}
+			return `model/avatars/${this.obj.avatar}/scene.gltf`
+		},
+		scale() {
+			return avatarsPara[this.obj.avatar].scale
+		},
+		rotation() {
+			return avatarsPara[this.obj.avatar].rotation
+		},
+		position() {
+			return avatarsPara[this.obj.avatar].position
+		}
 	},
 
 	data() {
