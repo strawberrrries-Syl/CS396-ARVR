@@ -1,0 +1,11 @@
+Model Information:
+* title:	Marshmallow Hat Guy
+* source:	https://sketchfab.com/3d-models/marshmallow-hat-guy-fbaee38b2f634ccba61b599c1056842e
+* author:	bervync (https://sketchfab.com/bervync)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Marshmallow Hat Guy" (https://sketchfab.com/3d-models/marshmallow-hat-guy-fbaee38b2f634ccba61b599c1056842e) by bervync (https://sketchfab.com/bervync) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

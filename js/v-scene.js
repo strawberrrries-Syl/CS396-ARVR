@@ -40,7 +40,7 @@ Vue.component("room-scene", {
 			<img id="sky" src="img/textures/sky-night.png">
       		<a-asset-item id="valentines_day_confession_scene" src="model/valentines_day_confession_scene/scene.gltf" />
       		<a-asset-item id="psyduck_kfc_toy" src="model/psyduck_kfc_toy/scene.gltf" />
-     		 <a-asset-item id="cat_dispenser" src="model/cat_dispenser/scene.gltf" />
+     		<a-asset-item id="cat_dispenser" src="model/cat_dispenser/scene.gltf" />
    		</a-assets>
 
 		<!--------- CAMERA --------->
@@ -82,7 +82,7 @@ Vue.component("room-scene", {
 		<!--------- ALL THE OBJECTS YOU'VE MADE --------->
 		<live-object  v-for="obj in room.objects" :key="obj.uid" :obj="obj" />d
       
-      	<a-gltf-model src="#valentines_day_confession_scene" scale="1.5 1.5 1.5" rotation="0 0 0" position="0 -4 0"></a-gltf-model>s
+      	<a-gltf-model src="#valentines_day_confession_scene" scale="1.5 1.5 1.5" rotation="0 0 0" position="0 -4 0"></a-gltf-model>
 		<a-gltf-model src="#psyduck_kfc_toy" scale="0.1 0.1 0.1" rotation="0 0 0" position="5 0.2 5"></a-gltf-model>
       	<a-gltf-model src="#cat_dispenser" scale="1 1 1" rotation="0 0 0" position="5 2.5 12"></a-gltf-model>
 		  
