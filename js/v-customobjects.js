@@ -31,6 +31,14 @@ const avatarsPara = {
 Vue.component("obj-head", {
 	template: `<a-entity>
 	<a-gltf-model :src="avatar" :scale="scale" :rotation="rotation" :position="position" animation-mixer></a-gltf-model>
+
+	<a-cone
+	    :height="headSize*1.0"
+		radius-top="0"
+		:radius-bottom="headSize*3"
+		position="0 2.0 0"
+		:color="obj.color.toHex(.3)"
+		></a-cone>
 	</a-entity>
 	`,
 	computed: {
